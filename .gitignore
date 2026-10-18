@@ -1,0 +1,5 @@
+# Local Netlify folder
+.netlify
+
+# Cache local do Wrangler (Cloudflare)
+.wrangler

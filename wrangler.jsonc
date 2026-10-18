@@ -1,0 +1,13 @@
+// Página do link da bio do Instagram, servida pelo Cloudflare no endereço infos.
+// Publicar: wrangler deploy (nesta pasta)
+{
+  "name": "fascinare-link",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./link-bio-instagram",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "infos.fascinaremodaintima.com.br", "custom_domain": true }
+  ]
+}

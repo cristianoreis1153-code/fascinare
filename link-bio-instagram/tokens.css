@@ -1,0 +1,72 @@
+/* Hallmark · tokens · theme: custom · vibe: "boutique sensual, vinho, discreta, noite elegante"
+ * paper: oklch(97% 0.010 10) · accent: oklch(43% 0.142 3) (vinho do logo #8A2249)
+ * display: Marcellus · body: Commissioner · axes: light / roman-serif / warm (vinho ~3°)
+ */
+:root {
+  /* papel e tinta — tudo puxado pro matiz do vinho */
+  --color-paper: oklch(97% 0.010 10);
+  --color-paper-2: oklch(94% 0.016 5);
+  --color-ink: oklch(20% 0.012 5);
+  --color-ink-2: oklch(38% 0.014 5);
+  --color-muted: oklch(48% 0.014 5);
+  --color-rule: oklch(85% 0.018 5);
+
+  /* marca */
+  --color-accent: oklch(43% 0.142 3);
+  --color-accent-hover: oklch(36% 0.130 3);
+  --color-accent-ink: oklch(97% 0.010 10);
+  --color-focus: oklch(50% 0.19 3);
+  --color-focus-claro: oklch(92% 0.040 351); /* anel de foco sobre fundo escuro ou vinho */
+  --color-rose: oklch(75% 0.081 351);
+
+  /* seção blackout (escura) */
+  --color-night: oklch(17% 0.018 3);
+  --color-night-2: oklch(23% 0.022 3);
+  --color-night-ink: oklch(94% 0.010 10);
+  --color-night-muted: oklch(74% 0.020 5);
+  --color-night-rule: oklch(32% 0.020 3);
+
+  --color-foto-preto: oklch(0% 0 0); /* fundo idêntico ao preto da arte "Discrição Total" do Cris */
+  --color-scrim: oklch(17% 0.018 3 / 0.62); /* fundo translúcido do botão de som sobre vídeo */
+
+  /* placeholder de mídia que o cliente ainda vai mandar */
+  --color-placeholder: oklch(90% 0.014 5);
+  --color-placeholder-ink: oklch(45% 0.014 5);
+
+  /* tipografia */
+  --font-display: "Marcellus", Georgia, serif;
+  --font-body: "Commissioner", "Segoe UI", sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: clamp(1.875rem, 1.4rem + 2vw, 2.625rem);
+  --text-3xl: clamp(2.375rem, 1.7rem + 3.2vw, 3.75rem);
+  --text-display: clamp(2.75rem, 1.9rem + 4.2vw, 4.75rem);
+
+  /* espaço — escala de 4 pt */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6.5rem;
+
+  --radius-sm: 2px;
+  --radius-pill: 999px;
+  --rule-hair: 1px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-press: 90ms;
+  --dur-slow: 350ms;
+  --dur-reveal: 650ms;
+}
