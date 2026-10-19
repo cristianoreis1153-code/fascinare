@@ -1,0 +1,6 @@
+# GitHub Pages publica só a página da consultoria.
+# A página do link da bio fica no Cloudflare (infos.fascinaremodaintima.com.br),
+# então a pasta dela e a configuração do Cloudflare não entram no site daqui.
+exclude:
+  - link-bio-instagram
+  - wrangler.jsonc
