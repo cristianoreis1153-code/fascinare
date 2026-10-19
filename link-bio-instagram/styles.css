@@ -694,3 +694,106 @@ p { margin: 0; }
   max-width: 44ch;
 }
 .abertura .consultivo b { color: var(--color-accent); font-weight: 600; }
+
+/* ---------- consultoria com hora marcada (bloco premium) ---------- */
+.consultoria {
+  --champ: oklch(80% 0.058 68);       /* champanhe da página da consultoria (#D8B48E) */
+  --champ-claro: oklch(88% 0.045 68);
+  --champ-linha: oklch(80% 0.058 68 / 0.38);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-night);
+  color: var(--color-night-ink);
+}
+/* brilho vinho no canto, como na página da consultoria */
+.consultoria::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 46rem; height: 46rem;
+  right: -18rem; top: -20rem;
+  background: radial-gradient(closest-side, oklch(43% 0.142 3 / 0.55), transparent);
+  pointer-events: none;
+}
+.consultoria-cartao {
+  display: grid;
+  gap: var(--space-2xl);
+  padding-block: var(--space-3xl);
+}
+.consultoria-rotulo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--champ);
+}
+.consultoria-rotulo::before { content: ""; width: 1.75rem; height: 1px; background: currentColor; opacity: 0.7; }
+.consultoria h2 { margin-top: var(--space-md); font-size: var(--text-3xl); max-width: 16ch; color: var(--color-night-ink); }
+.consultoria h2 span { color: var(--champ); font-style: italic; }
+.consultoria-texto > p:not(.consultoria-rotulo) { margin-top: var(--space-md); color: var(--color-night-muted); max-width: 46ch; }
+.consultoria .checks li { color: var(--color-night-ink); font-weight: 400; }
+.consultoria .checks li::before {
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D8B48E' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 0.85rem no-repeat;
+  border: 1px solid var(--champ-linha);
+}
+.consultoria .btn { margin-top: var(--space-xl); box-shadow: 0 1.1rem 2.5rem -1.1rem oklch(43% 0.142 3 / 0.9); }
+.consultoria .link-site { display: block; width: fit-content; margin-top: var(--space-sm); color: var(--champ-claro); }
+.consultoria .link-site:hover { color: var(--champ); }
+.consultoria :focus-visible { outline-color: var(--champ); }
+
+.consultoria-duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); max-width: 26rem; width: 100%; margin-inline: auto; }
+.consultoria-duo figure:nth-child(2) { margin-top: var(--space-2xl); }
+.consultoria-duo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 236 / 338;
+  object-fit: cover;
+  border-radius: 999px 999px var(--radius-sm) var(--radius-sm); /* arco, igual à página da consultoria */
+  outline: 1px solid var(--champ-linha);
+  outline-offset: 6px;
+}
+.consultoria-duo figcaption { margin-top: var(--space-md); text-align: center; font-size: var(--text-xs); line-height: 1.4; color: var(--color-night-muted); }
+.consultoria-duo figcaption b { display: block; font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: var(--text-xl); color: var(--color-night-ink); }
+
+/* dúvidas da consultoria */
+.consultoria-duvidas { border-top: 1px solid var(--champ-linha); padding-top: var(--space-lg); }
+.consultoria-duvidas details { border-bottom: 1px solid var(--color-night-rule); }
+.consultoria-duvidas summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  min-height: 3.5rem;
+  padding-block: var(--space-md);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-night-ink);
+}
+.consultoria-duvidas summary::-webkit-details-marker { display: none; }
+.consultoria-duvidas summary::after {
+  content: "+";
+  flex: none;
+  display: grid; place-items: center;
+  width: 2rem; height: 2rem;
+  border: 1px solid var(--champ-linha);
+  border-radius: 50%;
+  font-size: var(--text-lg);
+  line-height: 1;
+  color: var(--champ);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.consultoria-duvidas details[open] summary::after { transform: rotate(45deg); }
+.consultoria-duvidas details p { padding-bottom: var(--space-lg); color: var(--color-night-muted); max-width: 60ch; }
+.consultoria-duvidas details[open] p { animation: abrir var(--dur-slow) var(--ease-out); }
+
+@media (min-width: 52rem) {
+  .consultoria-cartao { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: center; padding-block: var(--space-4xl); }
+  .consultoria-duvidas { grid-column: 1 / -1; }
+}
